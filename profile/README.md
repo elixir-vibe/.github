@@ -7,7 +7,7 @@ Elixir-native tooling for AI-assisted coding, AST analysis, structural code sear
 | Package | Description | Hex |
 |---------|-------------|-----|
 | [ex_ast](https://github.com/elixir-vibe/ex_ast) | Search, replace, and diff Elixir code by AST pattern | [![Hex](https://img.shields.io/hexpm/v/ex_ast.svg)](https://hex.pm/packages/ex_ast) |
-| [exograph](https://github.com/elixir-vibe/exograph) | Structural Elixir code intelligence and search powered by ExAST, Reach, Ecto, and Postgres/ParadeDB | — |
+| [exograph](https://github.com/elixir-vibe/exograph) | Local CodeQL-style code search for Elixir, backed by Postgres and ExAST | [![Hex](https://img.shields.io/hexpm/v/exograph.svg)](https://hex.pm/packages/exograph) |
 | [ex_dna](https://github.com/elixir-vibe/ex_dna) | Code duplication detector powered by Elixir AST analysis | [![Hex](https://img.shields.io/hexpm/v/ex_dna.svg)](https://hex.pm/packages/ex_dna) |
 | [ex_slop](https://github.com/elixir-vibe/ex_slop) | Credo checks that catch AI-generated Elixir code slop | [![Hex](https://img.shields.io/hexpm/v/ex_slop.svg)](https://hex.pm/packages/ex_slop) |
 | [program_facts](https://github.com/elixir-vibe/program_facts) | Generate Elixir programs with known structural facts for analyzer testing | [![Hex](https://img.shields.io/hexpm/v/program_facts.svg)](https://hex.pm/packages/program_facts) |
