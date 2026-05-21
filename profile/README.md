@@ -37,24 +37,6 @@ The core packages are useful independently. Vibe ties them together into an expe
 | [theoria](https://github.com/elixir-vibe/theoria) | Proof/spec kernel | Elixir-native proof and specification kernel inspired by Lean's trusted-kernel architecture | [![Hex](https://img.shields.io/hexpm/v/theoria.svg)](https://hex.pm/packages/theoria) |
 | [hex-playground](https://github.com/elixir-vibe/hex-playground) | Corpus playground | Corpus playground for running local tools against popular Hex.pm packages | — |
 
-## Package map
-
-```text
-Elixir Vibe packages
-├── Code intelligence
-│   ├── ex_ast          package: AST pattern search/replace/diff
-│   ├── reach           package: graph, dependency, and architecture analysis
-│   └── exograph        package: indexed code search over ExAST and Reach facts
-├── Quality gates
-│   ├── ex_dna          package: duplicate-code detection
-│   ├── ex_slop         package: Credo checks for generated-code slop
-│   └── program_facts   package: synthetic analyzer fixtures
-└── Experimental / research
-    ├── vibe            package: BEAM-native coding-agent runtime
-    ├── theoria         package: proof/spec kernel experiments
-    └── hex-playground  repository: package corpus for dogfooding tools
-```
-
 ## Why this exists
 
 Agent-assisted Elixir development is safer when tools understand Elixir syntax, OTP runtime state, and project architecture instead of treating everything as plain text and shell output. Elixir Vibe packages keep analysis structured, outputs compact, checks cheap enough to run often, and BEAM-native workflows first-class.
