@@ -1,41 +1,59 @@
 # Elixir Vibe
 
-Elixir-native tooling for AI-assisted coding, AST analysis, code intelligence, quality checks, generated program facts, proof/spec experiments, and BEAM-native coding agents.
+Elixir-native tooling for safer AI-assisted coding. Search and rewrite code by AST, detect duplication and generated-code slop, check architecture boundaries, and bootstrap strict `mix ci` quality gates — all with tools that understand Elixir syntax and BEAM projects.
 
-The core packages are useful independently. Vibe ties them together into an experimental agent runtime, but it is not the starting point for most users yet.
+```bash
+mix igniter.install vibe_kit
+mix ci
+```
+
+VibeKit is the quickest entry point: it wires Credo, Dialyzer, ExDNA, ExSlop, and Reach into new or existing Mix projects with one Igniter installer. The rest of the ecosystem is useful independently when you need deeper AST tooling, code-flow analysis, fixtures, or an experimental BEAM-native agent runtime.
 
 ## Start here
 
-| If you need... | Start with | What it does | Hex |
-| --- | --- | --- | --- |
-| AST-aware search, replace, and diffs | [ex_ast](https://github.com/elixir-vibe/ex_ast) | Match and rewrite Elixir syntax by AST pattern instead of regex | [![Hex](https://img.shields.io/hexpm/v/ex_ast.svg)](https://hex.pm/packages/ex_ast) |
-| Architecture and code-flow analysis | [reach](https://github.com/elixir-vibe/reach) | Program dependence graph, call-flow, data-flow, architecture checks, and smell detection for BEAM projects | [![Hex](https://img.shields.io/hexpm/v/reach.svg)](https://hex.pm/packages/reach) |
-| Duplicate-code detection | [ex_dna](https://github.com/elixir-vibe/ex_dna) | Find duplicated Elixir AST structures and extraction candidates | [![Hex](https://img.shields.io/hexpm/v/ex_dna.svg)](https://hex.pm/packages/ex_dna) |
-| Credo checks for generated-code slop | [ex_slop](https://github.com/elixir-vibe/ex_slop) | Credo checks for common low-quality AI-generated Elixir patterns | [![Hex](https://img.shields.io/hexpm/v/ex_slop.svg)](https://hex.pm/packages/ex_slop) |
+| Project | What it does | Hex |
+| --- | --- | --- |
+| [vibe_kit](https://github.com/elixir-vibe/vibe_kit) | Igniter installer for strict Elixir project quality checks: `mix ci`, Credo, Dialyzer, ExDNA, ExSlop, and Reach | [![Hex](https://img.shields.io/hexpm/v/vibe_kit.svg)](https://hex.pm/packages/vibe_kit) |
 
-## Code intelligence and search
+## Code intelligence and analysis
 
-| Package | Domain | What it does | Hex |
-| --- | --- | --- | --- |
-| [ex_ast](https://github.com/elixir-vibe/ex_ast) | Elixir AST tooling | Search, replace, and diff Elixir code by AST pattern | [![Hex](https://img.shields.io/hexpm/v/ex_ast.svg)](https://hex.pm/packages/ex_ast) |
-| [reach](https://github.com/elixir-vibe/reach) | Graph/code-flow analysis | Program dependence graph and architecture/code-flow analysis for BEAM projects | [![Hex](https://img.shields.io/hexpm/v/reach.svg)](https://hex.pm/packages/reach) |
-| [exograph](https://github.com/elixir-vibe/exograph) | Indexed code intelligence | Structural Elixir code intelligence and search powered by ExAST, Reach, Ecto, and Postgres/ParadeDB | [![Hex](https://img.shields.io/hexpm/v/exograph.svg)](https://hex.pm/packages/exograph) |
+| Project | What it does | Hex |
+| --- | --- | --- |
+| [ex_ast](https://github.com/elixir-vibe/ex_ast) | AST-aware search, replace, and diffs for Elixir code | [![Hex](https://img.shields.io/hexpm/v/ex_ast.svg)](https://hex.pm/packages/ex_ast) |
+| [reach](https://github.com/elixir-vibe/reach) | Program dependence graph, call-flow, data-flow, architecture checks, and smell detection for BEAM projects | [![Hex](https://img.shields.io/hexpm/v/reach.svg)](https://hex.pm/packages/reach) |
+| [exograph](https://github.com/elixir-vibe/exograph) | Structural Elixir code intelligence and search powered by ExAST, Reach, Ecto, and Postgres/ParadeDB | [![Hex](https://img.shields.io/hexpm/v/exograph.svg)](https://hex.pm/packages/exograph) |
 
-## Quality and test-data packages
+## Quality and generated-code checks
 
-| Package | Domain | What it does | Hex |
-| --- | --- | --- | --- |
-| [ex_dna](https://github.com/elixir-vibe/ex_dna) | Duplication detection | Code duplication detector powered by Elixir AST analysis | [![Hex](https://img.shields.io/hexpm/v/ex_dna.svg)](https://hex.pm/packages/ex_dna) |
-| [ex_slop](https://github.com/elixir-vibe/ex_slop) | Credo checks | Credo checks that catch AI-generated Elixir code slop | [![Hex](https://img.shields.io/hexpm/v/ex_slop.svg)](https://hex.pm/packages/ex_slop) |
-| [program_facts](https://github.com/elixir-vibe/program_facts) | Analyzer fixtures | Generate Elixir programs with known structural facts for analyzer testing | [![Hex](https://img.shields.io/hexpm/v/program_facts.svg)](https://hex.pm/packages/program_facts) |
+| Project | What it does | Hex |
+| --- | --- | --- |
+| [ex_dna](https://github.com/elixir-vibe/ex_dna) | AST-aware duplicate-code detection with extraction candidates | [![Hex](https://img.shields.io/hexpm/v/ex_dna.svg)](https://hex.pm/packages/ex_dna) |
+| [ex_slop](https://github.com/elixir-vibe/ex_slop) | Credo checks for common low-quality AI-generated Elixir patterns | [![Hex](https://img.shields.io/hexpm/v/ex_slop.svg)](https://hex.pm/packages/ex_slop) |
+| [program_facts](https://github.com/elixir-vibe/program_facts) | Generate Elixir programs with known structural facts for analyzer testing | [![Hex](https://img.shields.io/hexpm/v/program_facts.svg)](https://hex.pm/packages/program_facts) |
 
-## Experimental and research projects
+## Experimental projects
 
-| Project | Domain | What it does | Hex |
-| --- | --- | --- | --- |
-| [vibe](https://github.com/elixir-vibe/vibe) | Experimental coding-agent runtime | BEAM-native coding agent for Elixir/OTP projects with TUI, web UI, eval, tools, memory, and subagents | [![Hex](https://img.shields.io/hexpm/v/vibe.svg)](https://hex.pm/packages/vibe) |
-| [theoria](https://github.com/elixir-vibe/theoria) | Proof/spec kernel | Elixir-native proof and specification kernel inspired by Lean's trusted-kernel architecture | [![Hex](https://img.shields.io/hexpm/v/theoria.svg)](https://hex.pm/packages/theoria) |
-| [hex-playground](https://github.com/elixir-vibe/hex-playground) | Corpus playground | Corpus playground for running local tools against popular Hex.pm packages | — |
+| Project | What it does | Hex |
+| --- | --- | --- |
+| [vibe](https://github.com/elixir-vibe/vibe) | Experimental BEAM-native coding agent runtime with TUI, web UI, eval, tools, memory, and subagents | [![Hex](https://img.shields.io/hexpm/v/vibe.svg)](https://hex.pm/packages/vibe) |
+| [theoria](https://github.com/elixir-vibe/theoria) | Elixir-native proof and specification kernel inspired by Lean's trusted-kernel architecture | [![Hex](https://img.shields.io/hexpm/v/theoria.svg)](https://hex.pm/packages/theoria) |
+| [hex-playground](https://github.com/elixir-vibe/hex-playground) | Corpus playground for running local tools against popular Hex.pm packages | — |
+
+## How it fits together
+
+```text
+Mix project
+├── vibe_kit              — one-command quality setup and mix ci conventions
+│   ├── credo             — general static analysis
+│   ├── dialyxir          — Dialyzer integration
+│   ├── ex_dna            — duplicate-code detection
+│   ├── ex_slop           — generated-code slop checks
+│   └── reach             — architecture and code-flow checks
+├── ex_ast                — AST-aware search, replace, and diffs
+├── exograph              — indexed structural code intelligence
+├── program_facts         — analyzer fixtures with known facts
+└── vibe                  — experimental BEAM-native agent runtime
+```
 
 ## Why this exists
 
