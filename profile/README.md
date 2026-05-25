@@ -23,6 +23,12 @@ VibeKit is the quickest entry point: it wires Credo, Dialyzer, ExDNA, ExSlop, an
 | [reach](https://github.com/elixir-vibe/reach) | Program dependence graph, call-flow, data-flow, architecture checks, and smell detection for BEAM projects | [![Hex](https://img.shields.io/hexpm/v/reach.svg)](https://hex.pm/packages/reach) |
 | [exograph](https://github.com/elixir-vibe/exograph) | Structural Elixir code intelligence and search powered by ExAST, Reach, Ecto, and Postgres/ParadeDB | [![Hex](https://img.shields.io/hexpm/v/exograph.svg)](https://hex.pm/packages/exograph) |
 
+## Phoenix and LiveView tooling
+
+| Project | What it does | Hex |
+| --- | --- | --- |
+| [phoenix_replay](https://github.com/elixir-vibe/phoenix_replay) | Session recording and replay for Phoenix LiveView | [![Hex](https://img.shields.io/hexpm/v/phoenix_replay.svg)](https://hex.pm/packages/phoenix_replay) |
+
 ## Quality and generated-code checks
 
 | Project | What it does | Hex |
@@ -52,6 +58,7 @@ Mix project
 ├── ex_ast                — AST-aware search, replace, and diffs
 ├── exograph              — indexed structural code intelligence
 ├── program_facts         — analyzer fixtures with known facts
+├── phoenix_replay        — session recording and replay for Phoenix LiveView
 └── vibe                  — experimental BEAM-native agent runtime
 ```
 
