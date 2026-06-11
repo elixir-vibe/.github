@@ -2,6 +2,14 @@
 
 Elixir-native tooling for safer AI-assisted coding. Search and rewrite code by AST, detect duplication and generated-code slop, check architecture boundaries, and bootstrap strict `mix ci` quality gates — all with tools that understand Elixir syntax and BEAM projects.
 
+Every package here is one building block of a larger thesis — a web stack
+where AI-generated software can be *checked*, not just generated:
+failures carry their location and cause, dependencies are traceable with
+proof, and every check earns its place with a measured false-positive
+rate. The full picture — manifesto, architecture, roadmap, and honest
+uncertainties — lives in
+**[Building Blocks for the Future Web](https://github.com/elixir-vibe/building-blocks)**.
+
 ```bash
 mix igniter.install vibe_kit
 mix ci
@@ -65,3 +73,9 @@ Mix project
 ## Why this exists
 
 Agent-assisted Elixir development is safer when tools understand Elixir syntax, OTP runtime state, and project architecture instead of treating everything as plain text and shell output. Elixir Vibe packages keep analysis structured, outputs compact, checks cheap enough to run often, and BEAM-native workflows first-class.
+
+The deeper argument — why these tools exist, how they compose with the
+[Elixir Volt](https://github.com/elixir-volt) frontend stack and
+[OpenPencil](https://github.com/open-pencil), and where it's all going —
+is written up as a living standard:
+[Building Blocks for the Future Web](https://github.com/elixir-vibe/building-blocks).
